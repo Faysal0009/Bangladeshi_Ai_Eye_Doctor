@@ -115,6 +115,17 @@ Bangladeshi_Ai_Eye_Doctor/
 
 Each notebook mounts Google Drive and stores files in `MyDrive/Bangladeshi_Ai_Eye_Doctor/{models,results,data}`, so they survive closing the Colab session.
 
+## Gemini LLM (optional, notebook 03)
+
+The chatbot in `03_conversational_ai.ipynb` can use the Gemini API to write a personalised report,
+answer follow-up questions (English or Bangla) and phrase the screening questions. The diagnosis always
+comes from the image model + confidence loop, never from the LLM, and the app falls back to its built-in
+answers if no key is set or the API is unreachable.
+
+- **Colab:** left sidebar -> Secrets (key icon) -> add `GEMINI_API_KEY` -> enable *Notebook access*.
+- **Local:** `export GEMINI_API_KEY=...` (free key: https://aistudio.google.com/apikey). Optionally set `GEMINI_MODEL`.
+- **Privacy:** when a key is set, the symptom answers and the AI result (not the image) are sent to Google's API.
+
 ## Installation
 
 ```bash
